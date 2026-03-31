@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: #C8A96E; border-radius: 3px; }
+
+/* ── Base ── */
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-brand-dark text-white antialiased;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+}
+
+/* ── Utilities ── */
+@layer utilities {
+  .text-gold    { color: #C8A96E; }
+  .bg-gold      { background-color: #C8A96E; }
+  .border-gold  { border-color: #C8A96E; }
+
+  .section-padding  { @apply px-4 sm:px-8 lg:px-16 xl:px-24 py-16 lg:py-24; }
+  .container-custom { @apply max-w-7xl mx-auto; }
+
+  .gold-underline {
+    position: relative;
+  }
+  .gold-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #C8A96E, transparent);
+  }
+}
+
+/* ── Swiper overrides ── */
+.swiper-pagination-bullet {
+  background: rgba(200, 169, 110, 0.5) !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+.swiper-pagination-bullet-active {
+  background: #C8A96E !important;
+  width: 30px !important;
+  border-radius: 5px !important;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #C8A96E !important;
+  font-size: 1.2rem !important;
+}
