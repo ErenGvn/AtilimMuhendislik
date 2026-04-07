@@ -29,7 +29,6 @@ export default function HeroSlider() {
   }, []);
 
   const slide = heroSlides[current];
-  const padded = (n: number) => String(n + 1).padStart(2, '0');
 
   return (
     <section className="relative w-full h-[100svh] min-h-[560px] overflow-hidden bg-black">
@@ -53,27 +52,8 @@ export default function HeroSlider() {
       ))}
 
       {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/10" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
-
-      {/* Slide counter — top right */}
-      <div className="absolute top-8 right-8 flex items-center gap-2 z-10">
-        <AnimatePresence mode="wait">
-          <motion.span
-            key={`num-${current}`}
-            initial={{ opacity: 0, y: -6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 6 }}
-            transition={{ duration: 0.4 }}
-            className="text-white text-sm font-light tracking-widest"
-          >
-            {padded(current)}
-          </motion.span>
-        </AnimatePresence>
-        <span className="text-white/40 text-sm font-light tracking-widest">
-          / {padded(heroSlides.length - 1)}
-        </span>
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
 
       {/* Bottom content */}
       <div className="absolute bottom-10 left-6 right-6 md:left-10 md:right-10 z-10">
@@ -86,41 +66,33 @@ export default function HeroSlider() {
             transition={{ duration: 0.55, ease: 'easeOut' }}
             className="mb-6"
           >
-            <p className="text-white/70 text-sm md:text-base font-light tracking-widest uppercase mb-1">
-              {slide.tagline}
-            </p>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-wider text-white">
-              {slide.projectName}
+            <h2 className="text-4xl md:text-6xl font-bold tracking-wide text-white leading-tight">
+              {slide.tagline}{' '}
+              <span className="text-white">{slide.projectName}</span>
             </h2>
           </motion.div>
         </AnimatePresence>
 
-        {/* Dot indicators */}
-        <div className="flex items-center gap-3">
-          {heroSlides.map((_, i) => (
+        {/* Named project tabs + Keşfet button */}
+        <div className="flex items-center gap-2 flex-wrap">
+          {heroSlides.map((s, i) => (
             <button
               key={i}
               onClick={() => {
                 setCurrent(i);
                 resetTimer();
               }}
-              aria-label={`Slayt ${i + 1}`}
-              className={`h-[2px] rounded-full transition-all duration-500 ${
-                i === current ? 'w-10 bg-white' : 'w-4 bg-white/35'
+              aria-label={s.projectName}
+              className={`px-4 py-1.5 text-[11px] tracking-widest uppercase border transition-all duration-300 ${
+                i === current
+                  ? 'bg-white text-black border-white'
+                  : 'bg-black/30 text-white/60 border-white/25 hover:border-white/50 hover:text-white/80 backdrop-blur-sm'
               }`}
-            />
+            >
+              {s.projectName}
+            </button>
           ))}
 
-          {/* Keşfet button */}
-          <Link href={`/projects/${slide.projectSlug}`} className="ml-auto">
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="px-7 py-2.5 bg-white text-black text-xs font-semibold tracking-widest uppercase hover:bg-gray-100 transition-colors"
-            >
-              Keşfet
-            </motion.button>
-          </Link>
         </div>
       </div>
     </section>

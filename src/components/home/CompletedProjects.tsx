@@ -8,15 +8,12 @@ export default function CompletedProjects() {
   return (
     <section className="bg-white px-4 md:px-8 pb-14">
       {/* Section header */}
-      <div className="flex items-center gap-3 mb-8">
-        <span className="w-2 h-2 rounded-full bg-black inline-block" />
-        <h2 className="text-base font-semibold tracking-widest uppercase text-black">
-          Tamamlanmış Projeler
-        </h2>
-      </div>
+      <h2 className="text-center text-sm font-semibold tracking-[0.2em] uppercase text-black mb-8">
+        Tamamlanmış Projeler
+      </h2>
 
-      {/* 2×2 grid — image only with caption overlay */}
-      <div className="grid grid-cols-2 gap-3 md:gap-4 max-w-5xl">
+      {/* 2×2 grid */}
+      <div className="grid grid-cols-2 gap-3 md:gap-4">
         {completedProjects.map((project, i) => (
           <motion.div
             key={project.slug}
@@ -31,14 +28,26 @@ export default function CompletedProjects() {
               alt={project.name}
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 50vw, 40vw"
+              sizes="(max-width: 768px) 50vw, 50vw"
             />
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+            {/* Default overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent transition-opacity duration-500 group-hover:opacity-0" />
 
-            {/* Caption */}
-            <div className="absolute bottom-0 left-0 right-0 px-4 py-3">
+            {/* Hover overlay */}
+            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end px-4 py-4 md:py-5">
+              <span className="text-white text-sm md:text-base font-semibold tracking-wide mb-1">
+                {project.name}
+              </span>
+              {project.description && (
+                <p className="text-white/85 text-xs md:text-sm leading-snug">
+                  {project.description}
+                </p>
+              )}
+            </div>
+
+            {/* Caption (hidden on hover) */}
+            <div className="absolute bottom-0 left-0 right-0 px-4 py-3 group-hover:opacity-0 transition-opacity duration-500">
               <span className="text-white text-sm md:text-base font-medium tracking-wide">
                 {project.name}
               </span>

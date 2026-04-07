@@ -40,9 +40,9 @@ export const projects: Project[] = [
     area: '18.500 m²',
     year: '2024–2026',
     mapsUrl: 'https://maps.google.com/?q=İncek+Ankara',
-    coverImage: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1200&q=80',
+    coverImage: '/images/projects/trio-1-cover-v2.png',
     gallery: [
-      'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1200&q=80',
+      '/images/projects/trio-1-cover-v2.png',
       'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80',
       'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80',
       'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80',
@@ -86,9 +86,9 @@ export const projects: Project[] = [
     area: '28.000 m²',
     year: '2025–2027',
     mapsUrl: 'https://maps.google.com/?q=Ankara+Türkiye',
-    coverImage: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80',
+    coverImage: '/images/projects/labris-cover.png',
     gallery: [
-      'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80',
+      '/images/projects/labris-cover.png',
       'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80',
       'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80',
       'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80',
@@ -108,9 +108,9 @@ export const projects: Project[] = [
     area: '15.000 m²',
     year: '2024–2026',
     mapsUrl: 'https://maps.google.com/?q=Ankara+Türkiye',
-    coverImage: 'https://images.unsplash.com/photo-1464082354059-27db6ce50048?w=1200&q=80',
+    coverImage: '/images/projects/ilko-cover.png',
     gallery: [
-      'https://images.unsplash.com/photo-1464082354059-27db6ce50048?w=1200&q=80',
+      '/images/projects/ilko-cover.png',
       'https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200&q=80',
       'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80',
       'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80',
@@ -123,16 +123,16 @@ export const projects: Project[] = [
     name: 'Esenboğa Havalimanı',
     fullName: 'Esenboğa Havalimanı',
     tagline: 'Tamamlandı',
-    description: 'Ankara Esenboğa Havalimanı terminal projesi.',
+    description: 'Yapının estetik ve teknik standartlarını yükselten taş kaplama, mekanik kaplama, izolasyon ve çevre düzenlemesi çalışmaları başarıyla tamamlanmıştır.',
     aboutProject: 'Ankara Esenboğa Havalimanı yeni terminal yapısı, modern havacılık mimarisinin en başarılı örneklerinden biridir.',
     status: 'completed',
     location: 'Ankara',
     area: '120.000 m²',
     year: '2018–2021',
     mapsUrl: 'https://maps.google.com/?q=Esenboğa+Havalimanı+Ankara',
-    coverImage: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80',
+    coverImage: '/images/projects/esenboga-cover.png',
     gallery: [
-      'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80',
+      '/images/projects/esenboga-cover.png',
     ],
     completedYear: 2021,
   },
@@ -197,22 +197,28 @@ export const projects: Project[] = [
 // ─────────────────────────────────────────────────────────────────────────────
 export const heroSlides = [
   {
-    image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1600&q=90',
+    image: '/images/projects/trio-1-cover-v2.png',
     tagline: 'Hayalinizdeki Villa',
     projectName: 'TRIO-1',
     projectSlug: 'trio-1',
   },
   {
-    image: 'https://images.unsplash.com/photo-1464082354059-27db6ce50048?w=1600&q=90',
-    tagline: 'Prestijin Yeni İmzası',
-    projectName: 'İLKO',
-    projectSlug: 'ilko',
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1600&q=90',
+    tagline: 'Prestijin Yeni Tanımı',
+    projectName: 'TRİO-2',
+    projectSlug: 'trio-2',
   },
   {
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=90',
+    image: '/images/hero/cover-image-3.png',
     tagline: 'Benzersiz Bir Deneyim',
     projectName: 'LABRİS',
     projectSlug: 'labris',
+  },
+  {
+    image: '/images/hero/cover-image-4.png',
+    tagline: 'Prestijin Yeni İmzası',
+    projectName: 'İLKO',
+    projectSlug: 'ilko',
   },
 ];
 
@@ -220,9 +226,9 @@ export const heroSlides = [
 // CONTACT INFO
 // ─────────────────────────────────────────────────────────────────────────────
 export const contactInfo = {
-  phone1: '+90 312 000 00 00',
-  phone2: '+90 530 000 00 00',
-  whatsapp: '905300000000',
+  phone1: '+90 (533) 293 87 39',
+  phone2: '+90 (537) 288 74 29',
+  whatsapp: '905332938739',
   email: 'info@atilimmuhendislik.com',
   addressTR: 'Reşitpaşa Süyü Tower, Yazıcıoğlu Cd., 06830 Çankaya/Ankara',
   addressUS: '823 Middlesex Turnpike, Burlington, MA 01803, USA',

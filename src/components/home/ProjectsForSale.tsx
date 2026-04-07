@@ -9,15 +9,12 @@ export default function ProjectsForSale() {
   return (
     <section id="projects" className="bg-white px-4 md:px-8 py-14">
       {/* Section header */}
-      <div className="flex items-center gap-3 mb-8">
-        <span className="w-2 h-2 rounded-full bg-black inline-block" />
-        <h2 className="text-base font-semibold tracking-widest uppercase text-black">
-          Satıştaki Projeler
-        </h2>
-      </div>
+      <h2 className="text-center text-sm font-semibold tracking-[0.2em] uppercase text-black mb-8">
+        Satıştaki Projeler
+      </h2>
 
       {/* 2×2 grid */}
-      <div className="grid grid-cols-2 gap-3 md:gap-4 max-w-5xl">
+      <div className="grid grid-cols-2 gap-3 md:gap-4">
         {forSaleProjects.map((project, i) => (
           <motion.div
             key={project.slug}
@@ -33,27 +30,23 @@ export default function ProjectsForSale() {
                   alt={project.name}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 50vw, 40vw"
+                  sizes="(max-width: 768px) 50vw, 50vw"
                 />
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-                {/* Project name */}
-                <div className="absolute bottom-0 left-0 right-0 px-4 py-3 flex items-end justify-between">
+                {/* Project name — bottom left */}
+                <div className="absolute bottom-4 left-4">
                   <span className="text-white text-sm md:text-base font-semibold tracking-wider">
                     {project.name}
                   </span>
+                </div>
 
-                  {/* Play / arrow button */}
-                  <div className="w-8 h-8 bg-black flex items-center justify-center flex-shrink-0 group-hover:bg-white transition-colors duration-300">
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      className="group-hover:[&>path]:fill-black transition-colors"
-                    >
+                {/* Arrow button — bottom center */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+                  <div className="w-11 h-11 bg-black flex items-center justify-center group-hover:bg-white transition-colors duration-300">
+                    <svg width="14" height="14" viewBox="0 0 12 12" fill="none">
                       <path
                         d="M2 1L10 6L2 11V1Z"
                         fill="white"
